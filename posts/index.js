@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const httpStatus = require('http-status-codes');
 const { randomBytes } = require('crypto');
 
 const app = express();
@@ -20,7 +21,7 @@ app.post('/posts', (req, res) => {
         title
     };
 
-    res.status(201).send(posts[id]);
+    res.status(httpStatus.CREATED).send(posts[id]);
 });
 
 app.listen(4000, () => {
