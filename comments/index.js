@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const httpStatus = require('http-status-codes');
 const { randomBytes } = require('crypto');
-const cors = requirs('cors');
+const cors = require('cors');
 
 const app = express();
 app.use(bodyParser.json());
