@@ -9,7 +9,7 @@ export default ({ postId }) => {
         event.preventDefault();
 
         await axios.post(`${apiUrl}/posts/${postId}/comments`, {
-            comment
+            content
         });
 
         setContent('');
@@ -18,12 +18,12 @@ export default ({ postId }) => {
     return (
         <div>
             <form onSubmit={submitForm}>
-                <div classNam="form-group">
+                <div className="form-group">
                     <label>New Comment</label>
                     <input
-                        value={content} 
-                        onChange={e => setContent(e.target.value)} 
-                        className="form-control" 
+                        value={content}
+                        onChange={e => setContent(e.target.value)}
+                        className="form-control"
                     />
                 </div>
                 <button className="btn btn-primary">Submit</button>
