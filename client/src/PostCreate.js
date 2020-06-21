@@ -1,9 +1,9 @@
 import React, { userState, useState } from 'react';
 import axios from 'axios';
 
-export default() => {
+export default () => {
     const [title, setTitle] = useState('');
-    
+
     const submitForm = async (event) => {
         event.preventDefault();
 
