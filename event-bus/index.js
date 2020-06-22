@@ -12,7 +12,7 @@ app.post('/events', (req, res) => {
     axios.post('http://localhost:4001/events', event);
     axios.post('http://localhost:4002/events', event);
 
-    res.send({ status: 'All good!'});
+    res.send({ status: 'All good!' });
 });
 
 app.listen(4005), () => {
