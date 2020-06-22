@@ -2,12 +2,13 @@ import React, { userState, useState } from 'react';
 import axios from 'axios';
 
 export default () => {
+    const apiUrl = 'http://localhost:4000';
     const [title, setTitle] = useState('');
 
     const submitForm = async (event) => {
         event.preventDefault();
 
-        await axios.post('http://localhost:4000/posts', {
+        await axios.post(`${apiUrl}/posts`, {
             title
         });
 
