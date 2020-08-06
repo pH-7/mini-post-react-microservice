@@ -21,8 +21,9 @@ app.post('/posts/:id/comments', async (req, res) => {
 
     const comments = commentsByPostId[req.params.id] || [];
     comments.push(
-        { id: commentId,
-            content 
+        {
+            id: commentId,
+            content
         }
     );
 
