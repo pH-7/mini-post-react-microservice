@@ -1,7 +1,7 @@
 {
   "name": "query",
   "version": "1.0.0",
-  "description": "",
+  "description": "A very simple data query service.",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js"
