@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const httpStatus = require('http-status-codes');
 const { randomBytes } = require('crypto');
+const { MODERATION_STATUS } = require('./moderation.constants');
 const cors = require('cors');
 const axios = require('axios');
 
@@ -20,10 +21,12 @@ app.post('/posts/:id/comments', async (req, res) => {
     const { content } = req.body;
 
     const comments = commentsByPostId[req.params.id] || [];
+
     comments.push(
         {
             id: commentId,
-            content
+            content,
+            status: MODERATION_STATUS.pending
         }
     );
 
@@ -35,7 +38,8 @@ app.post('/posts/:id/comments', async (req, res) => {
         data: {
             id: commentId,
             content,
-            postId: req.params.id
+            postId: req.params.id,
+            status: MODERATION_STATUS.pending
         }
     });
 
