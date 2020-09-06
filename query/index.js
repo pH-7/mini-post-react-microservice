@@ -36,6 +36,8 @@ app.post('/events', (req, res) => {
         });
     }
 
+    console.log(posts);
+
     res.send({}); // Send an empty object. Just for saying we received the object
 });
 

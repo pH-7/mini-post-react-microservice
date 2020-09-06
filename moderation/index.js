@@ -23,7 +23,8 @@ app.post('/events', (req, res) => {
             }
         });
 
-
+        // Still need to send a response, even if we got nothing :)
+        res.send({});
     }
 });
 
