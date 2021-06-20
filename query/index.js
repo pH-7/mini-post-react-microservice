@@ -60,11 +60,16 @@ app.post('/events', (req, res) => {
 app.listen(PORT, async () => {
     console.log('Litening on ', PORT);
 
-    const res = await axios.get(`${URL}/events`);
+    try {
+        const res = await axios.get(`${URL}/events`);
 
-    for (let event of res.data) {
-        console.log('🚀 Processing the event =>', event.type);
+        for (let event of res.data) {
+            console.log('🚀 Processing the event =>', event.type);
 
-        handleEvent(event.type, event.data);
+            handleEvent(event.type, event.data);
+        }
+    } catch (err) {
+        console.log(`Cannot retreive ${URL}/events`);
+        console.log(err.message);
     }
 });
