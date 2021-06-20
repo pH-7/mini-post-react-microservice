@@ -63,7 +63,7 @@ app.listen(PORT, async () => {
     const res = await axios.get(`${URL}/events`);
 
     for (let event of res.data) {
-        console.log('Processing the event =>', event.type);
+        console.log('🚀 Processing the event =>', event.type);
 
         handleEvent(event.type, event.data);
     }
