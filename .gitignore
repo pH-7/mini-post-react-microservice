@@ -1,15 +1,27 @@
-.idea/
-.vscode/
-node_modules/
 build
-.DS_Store
 *.tgz
 my-app*
 template/src/__tests__/__snapshots__/
 lerna-debug.log
+/.changelog
+*.log
+
+# NPM
+node_modules
+.npm
 npm-debug.log*
+
+# Yarn
 yarn-debug.log*
 yarn-error.log*
-/.changelog
-.npm/
 yarn.lock
+
+# IDE
+.idea
+.vscode
+
+# Mac OS / Linux
+._*
+*~
+.DS_Store
+.directory
